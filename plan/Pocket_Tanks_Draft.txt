@@ -1,0 +1,53 @@
+CGRA151 Project Plan
+
+Student name: Zac Scott
+Student ID: 300447976
+Name of game/artwork: Pocketable Tanks
+
+Vision
+1. Game concept: https://goo.gl/eYZMyS
+- This is to be a fork on the old flash game Pocket Tanks I used to play as a child.
+The purpose of the game is where 2 banks on a randomly generated terrian fire heavy 
+artillary at each other to destroy the other's heath. Depending on the artillary the
+shot may cause an explosion or carry momentum which will terraform the battlefield.
+Each tank has a limited quantity of different ammos as well as fuel to drive.
+
+In the original game there were 2 tanks which alternated turns where they got the
+opportunity to move and / or take a shot.
+
+Aswell as recreate the game I hope to redsign several aspects such as the interface,
+falling supply drops and hopefully some more dynamic interactive backdrops. (Ie, a swing bridge.)
+
+2. Game play:
+
+- At the beggining of the game, a menu is shown where they can chose the number of players. (Ie, 2 or 3).
+For each player they are able to take turns where they can move their tank and attempt to hit
+their oppositions. All tanks will use the same controls.
+
+- To aim and fire you can adjust your angle and power which will show part of a tradjectory. (fades out to blank in ~1/3 of tradjectory)
+The User can pick which form of ammunition can be used to fire. Ie, explosive or heavy. 
+
+3. Visual design:
+Mockup: https://goo.gl/f2bFbM
+
+- Menu Screen: Option to select # of players. Option to select backdrop (Default random)
+
+- User turn: Tank will be highlighted in some form to indicate who's turn.
+There will be fixed controls on the bottom of the screen in which the user can adjust the angle of fire,
+as well as a dial for power of shot.
+There will also be a energy bar showing remaining fuel which indicates how much further the tank may drive.
+
+- Settings cog or handburger menu which can be used to display an overlay 
+(can be clicked through) showing all the controls and their assigned alternative hotkeys.
+
+- Color Pallete.
+Likely comical US Millitary Colours.
+https://www.pinterest.nz/pin/51369251977444733/
+
+Timetable
+1. A core working program (done by two weeks before deadline): [A paragraph describing what you plan to have working two weeks before the submission deadline.]
+Randomly generated maps. Basic Tank with turret controls. At least one form of ammunition firing which causes damage to tank and terrain.
+2. A reasonable submission (done by one week before deadline): [A paragraph describing what needs to be complete in order that you would be happy to submit your project.]
+More ammunition added. Tanks driving. All major UI designs complete. Essentially as close to a working game a possible.
+3. A well-polished submission (done by project deadline): [A paragraph describing what should be considered as polish on top of your reasonable submission. You might like to suggest a couple of extensions that you will not commit to producing but that you could attempt to implement if you have time.]
+Bug Patching, Design custom backdrops in Bitmap editor. (Will load as background with loadImage()).

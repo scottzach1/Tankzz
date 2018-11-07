@@ -1,0 +1,71 @@
+CGRA151 Project Report
+
+Student name: Zac Scott
+Student ID: 300447976
+Name of game/artwork: Tankzz
+
+Vision:
+As a kid I was a big fan of the game tanks on mathsisfun.com/games/tanks.html
+I wanted to recreate my own version of this game, that could spark the same enjoyment
+I used to get when I played as a kid. When designing this, I wanted to make a nicer
+cleaner interface as well as run on a larger window. The idea of the game is to
+have 2 tanks on a randomly generated map that battle off in a series of turns.
+One improvement I wanted to add to the original game was to make the tank rotate
+to the ground which would make the game much more immersive.
+When developing the game, my vision begun to change a little as I decided I valued
+simplicity over lots of unique game elements and user options.
+
+
+
+Achievement:
+Now at the end of my game development, I am at a point where I have a perfectly
+functioning game that runs on randomly generated terrain with random variables.
+In practice I have found this variability makes the game fun to occasionally open
+during a lecture and play with the buddy next to me. The game tallies the number of
+wins and deals with terrain terraforming from the missiles rather reliably. Although,
+unfortunately due to my method of implementation there are some restrictions to the
+quality of craters. Especially on the side of hills. Mid project, I decided I did not
+want to focus on some of the other intended elements such as multiple missiles with the
+hope of making a more visually clean and minimal game that requires less balancing.
+
+Technical Challenges:
+There were many little challenges that were a joy to work my way through. The first and
+probably most important of which was the randomly generated terrain. I wanted to create
+a visually appealing terrain that the tanks are able to drive across.
+
+I ended up resorting to using a sinusoid to generate this terrain similar to what I had
+come across in ENGR121 in one of the exam questions. I thought this was a nice alternative
+to dealing with noise that will result in smooth data. When I got nice terrains generated I
+loaded all of the y values in an array mapping height with x.
+
+However when I got the terrain running I started to find that there was a significant
+performance hit generating the terrain for each frame. My initial approach was to write
+a line algorithm very similar to what we have been learning in lectures and draw a vertical
+line from each height to the bottom of the screen. This was very slow and when reading online
+I thought back to the first assignment where they got us drawing shapes with points as vertices.
+
+This speed up the program significantly. I also was encountering at first very slow frame rates as
+I was recalculating lots of values to render mostly static screen elements such as tanks. To resolve
+this issue I rewrote all of my code and elected which information was not changing on a frame to frame
+basis. For these I remembered their values in fields and recalculated them when they became relevant.
+(ie. a missile hits the ground.)
+
+I should also talk about problems that I was having with the tank rotating. My method in calculating the
+angle is to start at the left coordinate and keep iterating by 1px to the right until distance between
+the start and end point was greater than the length of the tank. However unfortunately because sometimes
+there would be a big change in height, Especially caused by a crater on the side of hills the angle I would
+calculate would be in the complex region and NaN. By approaching the problem from a different direction using
+trig and by adding a maximum incline it is now a rare occurrence which can only be triggered by an unfortunate
+missile hit terraforming the ground under the tank.
+
+Reflection:
+[give a one paragraph reflection on your experience of doing this assignment: what was easier than expected? what was harder than expected? how well did your plan match reality? what, if anything, would you have done differently?]
+Overall I think this project has gone really well. I did end up pushing it back behind other assignments
+until a little too late however fortunately I was ahead enough with my other projects to invests my nights
+into CGRA to get this done. There was a stage where my game was running really slowly and I was concerned
+I couldn't submit a nice working version. However with some rethinking and analysis over my code I was able
+to overcome that. This was exaggerated by the high resolution I work with on my computer. In total, at first
+the project was satisfyingly challenging but got a lot easier to conceptualize as the pieces (classes) each
+started falling into their own place.
+
+Sorry this was a little long.
