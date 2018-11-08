@@ -4,7 +4,7 @@ Game game;
 ControlScreen controls;
 
 void setup() {
- // size(2400, 1600); // 3:2 fixed aspect ratio.
+  //size(2400, 1600); // 3:2 fixed aspect ratio.
  size(1200, 800);
  frameRate(45);
  controls = new ControlScreen();
